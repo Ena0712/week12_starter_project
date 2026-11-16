@@ -6,6 +6,11 @@ export default function Lab1EffectTimer() {
   console.log('[LAB 1] rendered');
 
   useEffect(() => {
+    const id=setInterval(()=>{
+      setCount(prev=>prev+1);
+    },1000);
+    return ()=>clearInterval(id);
+    return <h2>Count: {count}</h2>;
     // TODO 1: 1초마다 setCount(prev => prev + 1)을 실행할 setInterval 작성
     // TODO 2: 만든 타이머 ID를 보관
     // TODO 3: return Cleanup 함수에서 clearInterval 호출
