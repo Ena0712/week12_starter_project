@@ -41,7 +41,10 @@ export default function Lab4RefTimer() {
 
   return (
     <div>
-      <p className="status">상태: {running ? 'Running' : 'Stopped'}</p>
+      <p className="status">
+        <span className={running ?'dot on':'dot off'}></span>
+        상태: {running ? 'Running':'Stopped'}
+      </p>
       <div className="count">{count}</div>
       <div className="controls">
         <button onClick={start} disabled={running}>Start</button>
