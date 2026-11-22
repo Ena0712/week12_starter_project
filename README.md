@@ -1,11 +1,62 @@
 
 
 
-Project Information: 프로젝트 소개 및 Starter Project 정보
-Installation: 설치·실행 방법 및 실행 화면
-Source Code Exploration: 주요 파일 구조, useEffect 및 useRef 분석, 주요 코드 2개 설명
+## Project Information
+- Timer 프로젝트의 요구 기능을 작성하고 수정하는 것
+
+## Installation
+- clone 후 npm install, npm run dev를 진행
+
+## Source Code Exploration
+```
+src/
+├── App.jsx          # Lab 탭 전환
+├── App.css
+├── main.jsx        # 전체 스타일
+└── components
+    ├── Lab1_EffectTimer.jsx
+    ├── Lab2_TimerControl.jsx
+    ├── Lab3_InputFocus_sx
+    └── Lab4_RefTimer.jsx
+```
+- useEffect는 렌더링항 후에 일어나는 효과를 처리하고 Dependency Array가 바뀔때만 실행되게 한다.
+- useRef는 렌더링해도 값을 유지하지만 값이 변경되도 렌더링이 되지 않는다.
+
+```jsx
+useEffect(() => {
+  if (!running) return;
+  const id = setInterval(() => {
+    setCount(prev => prev + 1);
+  }, 1000);
+  return () => clearInterval(id);
+}, [running]);
+```
+- running이 true가 되면 interval을 만들고 false가 되면 cleanup이 intervl을 정리한다.
+
+```jsx
+const start = () => {
+  if (timerRef.current) return;
+  timerRef.current = setInterval(() => {
+    setCount(prev => prev + 1);
+  }, 1000);
+  setRunning(true);
+};
+
+const stop = () => {
+  clearInterval(timerRef.current);
+  timerRef.current = null;
+  setRunning(false);
+};
+```
+- 타이머아이디는 timerRef에 있고, state에는 running,count가 있다.timerRef.current가 이미 있으면 start가 끝나서 intervaldl 중복생성되지않는다.
+
 ## Lab Implementation
 - 각 랩의 todo를 따라 제작
+
+
+
+
+
 ## Lab Comparison
 
 *useEffect의 Dependency Array가 필요한 이유는?*
@@ -22,8 +73,13 @@ Source Code Exploration: 주요 파일 구조, useEffect 및 useRef 분석, 주�
 
 ## Customizing
 - title 변경, css 색상 변경, console 오류 확인, 랩2와 랩4 css를 통해 타이머 상태 표시 기능 추가
-Deployment: 실제 접근 가능한 Vercel URL
-Weekly Review:
+
+## Deployment
+https://week12-starter-project-tau.vercel.app
+
+## Weekly Review
+useEffect와 useRef의 차이와 USEREF에 대해 무엇인디 어떻게 쓰는지에 대해 알 수 있었다.
+수업과 제공된 수업자료를 통해 따라가면 어렵지 않게 수행이 가능한 적절한 과제였다고 생각한다.
 
 
 
