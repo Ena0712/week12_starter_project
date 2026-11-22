@@ -134,6 +134,23 @@ body {
 .status {
   font-weight: 700;
   color: #3354a1;
+  display: flex;
+  align-items: center;
+}
+.dot{
+    display: inline-block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin-right:8px;
+    transition:background 0.2s;
+}
+.dot.on{
+    background: #1faa7a;
+    box-shadow: 0 0 0 4px #1faa7a30;
+}
+.dot.off{
+    background: #b4bdcc;
 }
 footer {
   margin-top: 20px;
