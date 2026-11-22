@@ -2,13 +2,17 @@ import { useRef } from 'react';
 
 // LAB 3 (Slide 15): Input Focus with useRef
 export default function Lab3InputFocus() {
+  const inputRef=useRef(null);
   // TODO 1: input DOM을 참조할 inputRef 생성 (초기값 null)
 
   const focusInput = () => {
+    inputRef.current.focus();
     // TODO 2: ref.current를 이용해 input에 focus() 호출
   };
 
   const clearInput = () => {
+    inputRef.current.value="";
+    inputRef.current.focus();
     // TODO 3: input의 값을 지우고 다시 Focus
   };
 
