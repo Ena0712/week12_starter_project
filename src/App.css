@@ -151,12 +151,3 @@ footer {
     font-size: 52px;
   }
 }
- .dot {
-    display: inline-block;
-    width:10px;
-    height: 10px;
-    border-radius:50%;
-    margin-right:8px;
- }
- .dot.on{background:#00b894;}
- .dot.off{background:#b2bec3;}
