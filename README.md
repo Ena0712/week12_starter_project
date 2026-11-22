@@ -1,6 +1,12 @@
-## Lab 비교 분석
 
-README에 다음 질문의 답을 작성합니다.
+
+
+Project Information: 프로젝트 소개 및 Starter Project 정보
+Installation: 설치·실행 방법 및 실행 화면
+Source Code Exploration: 주요 파일 구조, useEffect 및 useRef 분석, 주요 코드 2개 설명
+## Lab Implementation
+- 각 랩의 todo를 따라 제작
+## Lab Comparison
 
 *useEffect의 Dependency Array가 필요한 이유는?*
 - Dependency Array는 effect가 다시 실행할 때를 정해주는 배열로 불필요한 실행이 되는 것을 방지할 수 있다.
@@ -13,5 +19,12 @@ README에 다음 질문의 답을 작성합니다.
 
 *LAB 2와 LAB 4의 Timer 관리 방식은 어떻게 다른가?*
 - lab2에서는 running이 ture가 되면 interval이 생기고 state가 바뀌면 effect가 타이머를 관리하는 방식이고, lab4는 start()가 interval을 호출하며 이벤트헨들러로 id를 통해 ref를 직접 시작하고 멈추는 명령어로 관리하는 방식이다.
+
+## Customizing
+- title 변경, css 색상 변경, console 오류 확인, 랩2와 랩4 css를 통해 타이머 상태 표시 기능 추가
+Deployment: 실제 접근 가능한 Vercel URL
+Weekly Review:
+
+
 
 
